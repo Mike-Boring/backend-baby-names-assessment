@@ -1,12 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-# BabyNames python coding exercise.
-
-# Copyright 2010 Google Inc.
-# Licensed under the Apache License, Version 2.0
-# http://www.apache.org/licenses/LICENSE-2.0
-
 """
 Define the extract_names() function below and change main()
 to call it.
@@ -71,42 +62,4 @@ def extract_names(filename):
     return final_sorted_list
 
 
-def create_parser():
-    """Create a command line parser object with 2 argument definitions."""
-    parser = argparse.ArgumentParser(
-        description="Extracts and alphabetizes baby names from html.")
-    parser.add_argument(
-        '--summaryfile', help='creates a summary file', action='store_true')
-    # The nargs option instructs the parser to expect 1 or more
-    # filenames. It will also expand wildcards just like the shell.
-    # e.g. 'baby*.html' will work.
-    parser.add_argument('files', help='filename(s) to parse', nargs='+')
-    return parser
-
-
-def main(args):
-    # Create a command line parser object with parsing rules
-    parser = create_parser()
-    # Run the parser to collect command line arguments into a
-    # NAMESPACE called 'ns'
-    ns = parser.parse_args(args)
-
-    if not ns:
-        parser.print_usage()
-        sys.exit(1)
-
-    file_list = ns.files
-
-    # option flag
-    create_summary = ns.summaryfile
-
-    # For each filename, call `extract_names()` with that single file.
-    # Format the resulting list as a vertical list (separated by newline \n).
-    # Use the create_summary flag to decide whether to print the list
-    # or to write the list to a summary file (e.g. `baby1990.html.summary`).
-
-    # +++your code here+++
-
-
-if __name__ == '__main__':
-    main(sys.argv[1:])
+extract_names('./baby1990.html')
