@@ -43,6 +43,7 @@ def extract_names(filename):
     the name-rank strings in alphabetical order.
     ['2006', 'Aaliyah 91', 'Aaron 57', 'Abagail 895', ...]
     """
+    print('Filename: ', )
     sorting_names = []
     with open(filename) as f:
         text = f.read().split()
@@ -96,6 +97,7 @@ def main(args):
         sys.exit(1)
 
     file_list = ns.files
+    print('file list: ', type(file_list))
 
     # option flag
     create_summary = ns.summaryfile
@@ -106,6 +108,9 @@ def main(args):
     # or to write the list to a summary file (e.g. `baby1990.html.summary`).
 
     # +++your code here+++
+    names_list = extract_names(file_list[0])
+    for name in names_list:
+        print(name)
 
 
 if __name__ == '__main__':
