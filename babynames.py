@@ -7,6 +7,8 @@
 # Licensed under the Apache License, Version 2.0
 # http://www.apache.org/licenses/LICENSE-2.0
 
+__author__ = "Mike Boring"
+
 """
 Define the extract_names() function below and change main()
 to call it.
